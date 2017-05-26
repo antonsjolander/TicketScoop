@@ -1,0 +1,26 @@
+{
+  "name": "autoticketswap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "blessed": "~0.1.81",
+    "blessed-contrib": "~3.5.5",
+    "cheerio": "~0.22.0",
+    "debug": "~2.2.0",
+    "growl": "~1.9.2",
+    "node-notifier": "~4.6.1",
+    "request": "~2.75.0",
+    "winston": "~2.2.0",
+    "yargs": "~8.0.1"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~3.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthisk <m@tthisk.nl> (http://matthisk.nl/)",
+  "license": "ISC"
+}

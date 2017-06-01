@@ -1,5 +1,9 @@
 const argv = require('yargs')
     .command('start')
+    .alias({
+        's': 'session'
+    })
+    .demandOption('s', 'We need your session id to reserve tickets')
     .demandCommand(2)
     .argv;
 
@@ -10,7 +14,7 @@ const main = require('./lib/main');
 main.run({ 
     url: argv._[1],
     baseUrl: 'https://www.ticketswap.nl',
-    sessionID: '171fbc16ed2314a1b1ede9695440345d',
+    sessionID: argv['s'],
 })
     .catch(error => {
         console.error('Failed to run with error', error);

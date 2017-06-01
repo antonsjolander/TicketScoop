@@ -10,7 +10,7 @@ const main = require('./lib/main');
 main.run({ 
     url: argv._[1],
     baseUrl: 'https://www.ticketswap.nl',
-    sessionID: '5c9da77008987606c16fee0937d2e6a9',
+    sessionID: '171fbc16ed2314a1b1ede9695440345d',
 })
     .catch(error => {
         console.error('Failed to run with error', error);

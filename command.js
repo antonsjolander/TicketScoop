@@ -1,7 +1,7 @@
 const argv = require('yargs')
     .command('start')
     .alias({
-        's': 'session'
+        's': 'session',
     })
     .demandOption('s', 'We need your session id to reserve tickets')
     .demandCommand(2)

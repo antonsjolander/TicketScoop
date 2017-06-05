@@ -7,6 +7,7 @@ const Parser = require('../lib/parser');
 const sinon = require('sinon');
 const foundTicket = require('../lib/found-ticket');
 const errors = require('../lib/errors');
+const testSession = require('../lib/test-session');
 
 let options = {
     baseUrl: 'https://www.ticketswap.nl',
@@ -26,6 +27,8 @@ describe('main', () => {
         parser = new Parser(options, body);
 
         sandbox = sinon.sandbox.create();
+
+        sandbox.stub(testSession, 'isSignedIn').resolves(true);
     });
 
     afterEach(() => {
@@ -65,7 +68,10 @@ describe('main', () => {
         }
         MyError.prototype = Object.create(Error);
 
-        sandbox.stub(request, 'request').rejects(new MyError('NETWORK ERROR'));
+        const stub = sandbox.stub(request, 'request');
+        
+        stub.rejects(new MyError('NETWORK ERROR'));
+
         const main = require('../lib/main');
 
         return main.run({
